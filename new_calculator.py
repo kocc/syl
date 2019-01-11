@@ -1,4 +1,6 @@
-###改进版
+#改进版
+#输入101:3500 102:7000 103:13000 104:25000
+#输出ID:税后收入
 import sys
 from collections import namedtuple
 
