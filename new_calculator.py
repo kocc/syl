@@ -2,16 +2,16 @@
 import sys
 from collections import namedtuple
 
-TaxRate = namedtuple('Rate',['start_point','rate','cost'])
+TaxRate = namedtuple('TaxRate',['start_point','rate','cost'])
 
 TaxRateTable = [
-    Rate(80000, 0.45, 13505),
-    Rate(55000, 0.35, 5505),
-    Rate(35000, 0.30, 2755),
-    Rate(9000, 0.25, 1005),
-    Rate(4500, 0.20, 555),
-    Rate(1500, 0.10, 105),
-    Rate(0, 0.03, 0)]
+    TaxRate(80000, 0.45, 13505),
+    TaxRate(55000, 0.35, 5505),
+    TaxRate(35000, 0.30, 2755),
+    TaxRate(9000, 0.25, 1005),
+    TaxRate(4500, 0.20, 555),
+    TaxRate(1500, 0.10, 105),
+    TaxRate(0, 0.03, 0)]
 
 
 #根据落入的税率区间，按照对应的税率参数计算税率
@@ -19,7 +19,7 @@ def TaxCalculation(income):
 	num = income * (1 - 0.165) - 3500
 	for item in TaxRateTable:
 		if num > item.start_point:
-			tax = num * rate - cost
+			tax = num * item.rate - item.cost
 			return '{:.2f}'.format(tax), '{:.2f}'.format(income * (1 - 0.165) - tax)
 	return '0.00', '{:.2f}'.format(income * (1 - 0.165))
 
@@ -32,8 +32,8 @@ def main():
 			print('Parameter Error')
 			continue
 			
-		 _, remain = TaxCalculation(income)
-		 print('{}:{}'.format(id, remain))
+		_, remain = TaxCalculation(income)
+		print('{}:{}'.format(id, remain))
 
 if __name__ == '__main__':
 	main()
