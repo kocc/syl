@@ -5,7 +5,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
 	print('method:', request.method)						#查看本次请求的方式
 	print('name:', request.form['name'])					#获取name值
