@@ -10,7 +10,7 @@ def register():
 	print('method:', request.method)						#查看本次请求的方式
 	print('name:', request.form['name'])					#获取name值
 	print('name:', request.form.get('passworrd'))			#获取password值
-	print('hobbies:', request.form.get.getlist('hobbies'))	#获取hobbies值，因为有多项故用getlist方法
+	print('hobbies:', request.form.getlist('hobbies'))	#获取hobbies值，因为有多项故用getlist方法
 	print('age:', request.form.get('age', default=18))		#如果没有传递age值，可以在程序中设置默认值
 	return 'register successed'
 
