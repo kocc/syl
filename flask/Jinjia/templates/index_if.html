@@ -1,0 +1,10 @@
+<!--{% ... %}包含的代码是可被执行的语句-->
+<!--{{ ... }} 包含的是 Python 对象，用于解析出这些对象的值-->
+
+{% if course.is_private %}
+	<p> course { course.name } is private </p>
+{% elif course.is_member_course %}
+	<p> course {{ course.name }} is member course </p>
+{% else %}
+	<p> course {{ course.name }} is normal course<p/>
+{% endif %}

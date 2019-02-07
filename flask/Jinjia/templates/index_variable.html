@@ -1,0 +1,17 @@
+<!--{{ ... }} 包含的是 Python 对象，用于解析出这些对象的值，常用于打印内容-->
+
+<h1>hello world</h1>
+<p>name: {{ course.name }}</p>
+<p>user count: {{ course.user_count }}</p>
+<p>teacher: {{ course.teacher }}</p>
+<p>is_private: {{ course.is_private }}</p>
+<p>not_exist: {{ course.not_exist }}</p>	<!--当访问不存在的属性时会返回空值而不是报错-->
+
+<!--
+效果图如下
+name:Python Basic
+user count:5348
+teacher:{'name':'Admin','email':'luojin@simplecloud.cn'}
+is_private:False
+not exist
+-->
