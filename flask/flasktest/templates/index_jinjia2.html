@@ -3,6 +3,7 @@
 {% elif course.has_tags %}
 	{% for tag in course.tags %}
 	<span> {{ tag }} </span>
+{% endfor %}
 {% else %}
 	<p> course is not unique and it don\'t has tag </p>
 {% endif %}
