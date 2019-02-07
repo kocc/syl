@@ -11,17 +11,16 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True		#每当模板发生改变时会自�
 def index():
 	teacher = {
 		'name':'admin',
-		'email':luojin@simplecloud.cn
+		'email':'luojin@simplecloud.cn'
 	}
 
 	course = {
-		'name':'Python Basic',
-		'teacher':'teacher',
-		'user_count':'5348',
-		'price':'199.0',
-		'lab':'None'
-		'is_private':'False'
-		'is_member_course':'True'
-		'tags':['python', 'big data', 'linux']
+		'python':'lou+ python',
+		'java':'java base',
+		'bigdata':'spark sql',
+		'teacher':'shixiaolou',
+		'is_unique':'False',
+		'has_tags':'True',
+		'tags':['c', 'c++', 'docker']
 	}
 	return render_template('index.html',course = course)
