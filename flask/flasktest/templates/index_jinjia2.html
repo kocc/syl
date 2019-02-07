@@ -1,0 +1,8 @@
+{% if course.is_unique %}
+	<p> course is unique </p>
+{% elif course.has_tags %}
+	{% for tag in course.tags %}
+	<span> {{ tag }} </span>
+{% else %}
+	<p> course is not unique and it don\'t has tag </p>
+{% endif %}
