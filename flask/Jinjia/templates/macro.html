@@ -1,0 +1,16 @@
+{# 定义course_item宏，第一个参数是course，第二个是类型 #}
+{#在其中定义一个名为 course_tag 的宏#}
+{% macro course_tag(course) %}
+	{% if course.is_unique %}
+		<p> course is unique </p>
+	{% endif %}
+	{% if course.has_tags %}
+		{% for tag in course.tags %}
+		<span> {{ tag }} </span>
+		{% endfor %}
+	{% else %}
+		<p> course is not unique and it don\'t has tag </p>
+	{% endif %}
+{% endmacro %}
+
+{#这是调用宏<div> {{ course_item(course) }} </div>#}
