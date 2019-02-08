@@ -1,0 +1,15 @@
+{# extends关键字说明模板从base.html继承而来。import关键字导入宏course_item #}
+{% extends "base.html" %}
+{% from 'macro.html' import course_item %}
+
+{# block关键字覆盖了base.html模板中定义的header,即重写 #}
+{% block header %}
+	<h1> header </ha>
+{% endblock %}
+
+{# 重写了content #}
+{% block content %}
+	{{ course_item(course) }}
+{% endblock %}
+
+{# footer显示默认内容，未作修改 #}
