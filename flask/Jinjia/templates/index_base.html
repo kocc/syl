@@ -1,15 +1,22 @@
-{# extends关键字说明模板从base.html继承而来。import关键字导入宏course_item #}
+{# 继承自 base.html 页面，从 macro.html 页面导入 course_tag #}
+{# 改写 header 模块，使标题以 h1 显示 shiyanlou #}
+{# 改写 content 模块，调用 course_tag 模块 #}
+{# 改写 footer 模块，使其显示 shiyanlou 且点击后能够跳转到实验楼官网 #}
+
+{# extends关键字说明模板从base.html继承而来。import关键字导入宏course_tag #}
 {% extends "base.html" %}
-{% from 'macro.html' import course_item %}
+{% from 'macro.html' import course_tag %}
 
 {# block关键字覆盖了base.html模板中定义的header,即重写 #}
 {% block header %}
-	<h1> header </ha>
+	<h1> shiyanlou </ha>
 {% endblock %}
 
 {# 重写了content #}
 {% block content %}
-	{{ course_item(course) }}
+	{{ course_tag(course) }}
 {% endblock %}
 
-{# footer显示默认内容，未作修改 #}
+{% block footer %}	<!--被block定义的footer块-->
+	&copy;Copyright 2017 by <a href="hrrp://www.shiyanlou.com">shiyanlou</a>. 
+{% endblock %}

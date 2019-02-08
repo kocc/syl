@@ -1,13 +1,20 @@
 <body>
 	<div>
-		{% block header %}	<!--通过block定义了header,content,footer三个可被其他模板重写的块，未被重写则显示默认内容-->
-			<p> this is header </p>
+		{% block header %}		<!--通过block定义了header,content,footer三个可被其他模板重写的块，未被重写则显示默认内容-->
+			<p> header </p>
 		{% endblock %}
 	</div>
-	<div>{% block content %}{% endblock %}</div>
+
+	<div>
+		{% block content %}		<!--被block定义的content块-->
+		<p> content </p>
+		{% endblock %}
+	</div>
+	<p> hello world </p>
+
 	<div id="footer">
-		{% block footer %}
-		&copy;Copyright 2017 by <a href="hrrp://www.shiyanlou.com">shiyanlou</a>.
+		{% block footer %}	<!--被block定义的footer块-->
+		<!-- &copy;Copyright 2017 by <a href="hrrp://www.shiyanlou.com">shiyanlou</a>. -->
 		{% endblock %}
 	</div>
 </body>
