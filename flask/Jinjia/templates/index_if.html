@@ -1,5 +1,6 @@
-<!--{% ... %}包含的代码是可被执行的语句-->
-<!--{{ ... }} 包含的是 Python 对象，用于解析出这些对象的值-->
+{#{% ... %}包含的代码是可被执行的语句#}
+{#{{ ... }} 包含的是 Python 对象，用于解析出这些对象的值#}
+{#这是jinjia2注释方式#}
 
 {% if course.is_private %}
 	<p> course { course.name } is private </p>
@@ -8,3 +9,5 @@
 {% else %}
 	<p> course {{ course.name }} is normal course<p/>
 {% endif %}
+
+{#由于app.py中course的python是is_member故会输出course python is member course#}

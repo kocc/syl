@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #要求输出
 #ERROR
 #Jackie
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 	user1.name = 'Jackie'
 	user2 = NewUser(102, 'Louplus')
 	print(user1.name)
-=======
+
 #要求输出
 #ERROR
 #Jackie
@@ -56,5 +56,5 @@ if __name__ == '__main__':
 	user1.name = 'Jackie'
 	user2 = NewUser(102, 'Louplus')
 	print(user1.name)
->>>>>>> 0096e2efa181f047f0e45d587d2bd1af3ff9e6c3
+
 	print(user2.name)

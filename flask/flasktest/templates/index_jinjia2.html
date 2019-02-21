@@ -1,9 +1,16 @@
+{#判断 course 是否为 unique，如果是则页面显示：course is unique#}
+	{# 逻辑比较 if 必须对应 endif #}
+{#判断 course 是否有 tag，如果有则循环遍历每一个标签，在页面中依次显示标签的值#}
+	{# 循环通过for语句完成，必须对应span #}
+{#如果以上两者都不是，则页面显示：course is not unique and it don\'t has tag#}
+
 {% if course.is_unique %}
 	<p> course is unique </p>
-{% elif course.has_tags %}
+{% endif %}
+{% if course.has_tags %}
 	{% for tag in course.tags %}
 	<span> {{ tag }} </span>
-{% endfor %}
+	{% endfor %}
 {% else %}
 	<p> course is not unique and it don\'t has tag </p>
 {% endif %}
