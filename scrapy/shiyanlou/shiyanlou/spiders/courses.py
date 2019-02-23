@@ -16,6 +16,6 @@ class CourseSpider(scrapy.Spider):
 				'description': course.css('div.course-desc::text').extract_first(),
 				'type': course.css('div.course-footer::text').extract_first(),
 				'type': course.css('div.course-footer span.pull-right::text').extract_first(default='免费'),
-				'student': course.xpath('.//span[contains(@class, "pull-left")]/text()[2]').re_first()
+				'students': course.xpath('.//span[contains(@class, "pull-left")]/text()[2]').re_first()
 			})
 			yield item
